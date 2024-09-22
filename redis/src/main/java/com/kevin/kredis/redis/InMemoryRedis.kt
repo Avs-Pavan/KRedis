@@ -4,7 +4,7 @@ import java.util.concurrent.ConcurrentHashMap
 
 class InMemoryRedis<K : Any, V : Any>(
     private val evictionPolicy: EvictionPolicy<K> = LruEvictionPolicy(),
-    private val maxSize: Int = 1000
+    private val maxSize: Int = Int.MAX_VALUE
 ) : Redis<K, V> {
 
     private val cacheMap = ConcurrentHashMap<K, V>()

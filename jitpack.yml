@@ -1,0 +1,12 @@
+# configuration file for building snapshots and releases with jitpack.io
+jdk:
+  - openjdk17
+
+before_install:
+  - yes | sdkmanager "platforms;android-34"
+
+install:
+  - ./gradlew clean build
+
+script:
+  - ./gradlew assembleRelease

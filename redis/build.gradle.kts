@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -29,6 +30,26 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+}
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.kevin.kredis"
+                artifactId = "redis"
+                version = "1.0"
+                pom {
+                    description.set("A simple Redis implementation for Android")
+                }
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
     }
 }
 
