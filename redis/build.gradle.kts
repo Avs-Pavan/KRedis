@@ -34,24 +34,6 @@ android {
 }
 
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                groupId = "com.kevin.kredis"
-                artifactId = "redis"
-                version = "2.0"
-                pom {
-                    description.set("A simple Redis implementation for Android")
-                }
-            }
-        }
-        repositories {
-            mavenLocal()
-        }
-    }
-}
 
 dependencies {
 
