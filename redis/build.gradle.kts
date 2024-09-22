@@ -41,7 +41,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.kevin.kredis"
                 artifactId = "redis"
-                version = "1.0"
+                version = "2.0"
                 pom {
                     description.set("A simple Redis implementation for Android")
                 }
