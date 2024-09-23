@@ -1,6 +1,8 @@
 # KRedis
 
-KRedis is an in-memory key-value store implemented in Kotlin. It supports various eviction policies, including Least Recently Used (LRU).
+[![](https://jitpack.io/v/Avs-Pavan/KRedis.svg)](https://jitpack.io/#Avs-Pavan/KRedis)
+
+KRedis is an in-memory key-value store implemented in Kotlin for Android. It supports various eviction policies, including Least Recently Used (LRU).
 
 ## Features
 
@@ -11,11 +13,19 @@ KRedis is an in-memory key-value store implemented in Kotlin. It supports variou
 
 ## Installation
 
-To include KRedis in your project, add the following dependency to your `build.gradle` file:
+To include KRedis in your project, add the following to your `build.gradle` file:
 
 ```groovy
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
 dependencies {
-    implementation 'com.kevin.kredis:kredis:1.0.0'
+    implementation 'com.github.Avs-Pavan:KRedis:3.0'
 }
 ```
 
